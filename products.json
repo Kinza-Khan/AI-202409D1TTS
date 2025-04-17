@@ -3,7 +3,7 @@
     "id":1 ,
     "name":"NikeAQ34",
     "price" : 15000 ,
-     "description" : "Hello",
+     "description" : "The first shoe to use Max Air technology is still displaying the decades of innovation that make it as iconic as it is comfortable. The proof? You're looking through it.",
     "qty" : 45 ,
     "image" : "images/n1.webp"
 } ,
@@ -11,7 +11,7 @@
     "id":2 ,
     "name":"NikeFQ35",
     "price" : 20000 ,
-     "description" : "Hello",
+     "description" : "Meet the leader of the pack. Walking on clouds above the noise, the Air Max 1 blends timeless design with mixed materials and cushioned comfort. This icon hit the scene in ‘87 and continues to be the soul of the franchise today.",
     "qty" : 65 ,
     "image" : "images/n1.webp"
 },
@@ -19,7 +19,7 @@
     "id":3 ,
     "name":"NikeSY36",
     "price" : 25000 ,
-     "description" : "Hello",
+     "description" : "Meet the leader of the pack. Walking on clouds above the noise, the Air Max 1 blends timeless design with mixed materials and cushioned comfort. This icon hit the scene in ‘87 and continues to be the soul of the franchise today.",
     "qty" : 50 ,
     "image" : "images/n3.webp"
 },
@@ -27,7 +27,7 @@
     "id":4 ,
     "name":"NikeZY37",
     "price" : 15000 ,
-     "description" : "Hello",
+     "description" : "The first shoe to use Max Air technology is still displaying the decades of innovation that make it as iconic as it is comfortable. The proof? You're looking through it.",
     "qty" : 48 ,
     "image" : "images/n4.webp"
 }
