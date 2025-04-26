@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aptech SYSTEM "external.dtd" [
+<!ENTITY aptech "aptech shahrah-e-faisal">
+]>
+<aptech>
+    <staff department="HR">
+        <id></id>
+        <name></name>
+        <email>&aptech;</email>
+    </staff>
+    <staff department="HR">
+        <id></id>
+        <name></name>
+        <email></email>
+    </staff>
+    <students>
+        <id></id>
+        <name></name>
+        <course></course>
+    </students>
+</aptech>
