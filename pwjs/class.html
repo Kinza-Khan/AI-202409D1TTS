@@ -1,21 +1,29 @@
 <script>
-    class Human{
-          
-        constructor(name , age){
-                console.log(name,age);
-        }
-        speak(){
 
+
+
+    class Human{
+
+        name ;
+        food ;
+        lang ;
+        constructor(sName , sFood ,sLang){
+            this.name = sName ;
+            this.food = sFood ;
+            this.lang = sLang ;
         }
         eat(){
-
+            console.log( this.name + " eats " + this.food  );
         }
-        walk(){
-
+        speak(){
+            console.log(this.name + " can speak " + this.lang);
         }
-        
     }
-    let human1 = new Human('Mansoor' ,18);
 
+  let std1 = new Human('Ali' , 'Biryani' , 'English');
+  std1.eat();
+  std1.speak();
+  let std2 = new Human('Aqsa' , 'Dal Chawal');
+  std2.eat();
 
 </script>
