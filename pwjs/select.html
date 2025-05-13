@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container p-5">
+        <a href="regular_expression.html" class="btn btn-info">Add</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                   
+                </tbody>
+            </table>
+    </div>
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+ <script>
+    console.log(localStorage.getItem('students'));
+    let allSUsers = JSON.parse(localStorage.getItem('students'));
+    console.log(allSUsers);
+    allSUsers.forEach(element=>{
+       // console.log(element);
+       $('tbody').append(` <tr>
+                        <th>`+element.name+`</th>
+                        <td>`+element.email+`</td>
+                        <td>`+element.password+`</td>
+                      d>
+                    </tr>`)
+    })
+ </script>
+</body>
+</html>

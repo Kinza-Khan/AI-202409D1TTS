@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container p-5">
+        
         <div class="mb-3">
             <label for="" class="form-label">Name</label>
             <input
@@ -18,7 +19,7 @@
                 placeholder=""
                 aria-describedby="helpId"
             />
-            <small id="helpId"></small>
+            <small id="helpId" class="text-danger"></small>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Email</label>
@@ -30,7 +31,7 @@
                 placeholder=""
                 aria-describedby="helpId"
             />
-            <small id="helpId" class="text-muted"> </small>
+            <small id="helpId" class="text-danger"> </small>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Password</label>
@@ -42,24 +43,15 @@
                 placeholder=""
                 aria-describedby="helpId"
             />
-            <small id="helpId" class="text-muted"></small>
+            <small id="helpId" class="text-danger"></small>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Confirm Password</label>
-            <input
-                type="text"
-                name=""
-                id="userConfirmPassword"
-                class="form-control"
-                placeholder=""
-                aria-describedby="helpId"
-            />
-            <small id="helpId" class="text-muted"></small>
+            <input type="text"  name="" id="userConfirmPassword"class="form-control" placeholder="" aria-describedby="helpId" />
+            <small id="helpId" class="text-danger"></small>
         </div>
-        <button class="btn btn-info">Add</button>
+        <button class="btn btn-info" id="sub">Add</button>
     </div>
-
-
     <script src="jquery/jquery-3.7.1.min.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script>
@@ -75,7 +67,82 @@
                 $(this).next('small').hide();
             }
            // console.log(uName);
+
         })
+        $("#userEmail").keyup(function(){
+                let uEmail = $(this).val();
+                // console.log(uEmail);
+                let uEmailRE = /^[a-z0-9_.]{5,10}[@][a-z]{5,6}[.][a-z]{3}$/ ; //kinza12
+                if(!uEmailRE.test(uEmail)){
+                    $(this).css('border','2px solid red');
+                    $(this).next('small').show().text('Enter Valid Email');
+                }
+                else{
+                    $(this).css('border','2px solid green');
+                    $(this).next('small').hide();
+                }
+            })
+            $("#userPassword").keyup(function(){
+                let uPassword = $(this).val();
+                // console.log(uPassword); 
+                let uPasswordRE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[^a-zA-Z0-9]).{8,}$/;
+                 if(!uPasswordRE.test(uPassword)){
+                    $(this).css('border','2px solid red');
+                    $(this).next('small').show().text('password should contain at least one uppper one lower case one digit and one special character');
+                }
+                else{
+                    $(this).css('border','2px solid green');
+                    $(this).next('small').hide();
+                }
+            })
+   
+
+            //confirm Password
+            $("#userConfirmPassword").keyup(function(){
+                   let uPassword = $("#userPassword").val();
+                   let uConfirmPassword = $(this).val();
+                  if(uPassword){
+                     if(uPassword != uConfirmPassword){
+                     $(this).css('border','2px solid red');
+                      $(this).next('small').show().text('confirm Password should be matched');
+                   }
+                    else{
+                    $(this).css('border','2px solid green');
+                    $(this).next('small').hide();
+                }
+                  }
+                  else{
+                     $(this).css('border','2px solid red');
+                      $(this).next('small').show().text('required');
+                  }
+            })
+
+
+            function emptyFields(id){
+                    if($(id).val() == ""){
+                    $(id).css('border','2px solid red');
+                      $(id).next('small').show().text('this filed is required');     
+                    }
+            }
+            $("#sub").click(function(){
+                let uName = $("#userName").val();
+                let uEmail = $("#userEmail").val();
+                let uPassword = $("#userPassword").val();
+                let uConfirmPassword = $("#userConfirmPassword").val();
+                let uNameRE = /^[a-zA-Z\s]{3,10}$/;
+                let uEmailRE = /^[a-z0-9_.]{5,10}[@][a-z]{5,6}[.][a-z]{3}$/ ; //kinza12
+                let uPasswordRE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[^a-zA-Z0-9]).{8,}$/;
+                emptyFields("#userName");
+                emptyFields("#userEmail");
+                emptyFields("#userPassword");
+                emptyFields("#userConfirmPassword");
+                let users =  JSON.parse(localStorage.getItem('students')) ||  [] ;
+                if(uNameRE.test(uName) && uEmailRE.test(uEmail) && uPasswordRE.test(uPassword)){
+                  users.push({'name':uName,'email':uEmail,'password' :uPassword}); 
+                  localStorage.setItem('students',JSON.stringify(users));
+                  location.assign('select.html');
+                } 
+            })
     </script>
 </body>
 </html>
