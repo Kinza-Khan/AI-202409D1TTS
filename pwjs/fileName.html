@@ -1,0 +1,12 @@
+<script>
+    let url = location.href;
+    console.log(url + " " +typeof(url));
+    let strSplit = url.split("/"); // split returns array
+    console.log(strSplit);
+    let lastIndexValue = strSplit[strSplit.length-1]; //strSplit[5-1] => strSplit[4]
+    console.log(lastIndexValue);
+   let add = (n1=10,n2=10)=>{
+   console.log(n1+n2);
+   } 
+   add(20,30);
+</script>

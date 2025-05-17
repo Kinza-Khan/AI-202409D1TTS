@@ -1,0 +1,16 @@
+<script>
+    let stdName = "ali";
+    console.log(stdName);
+    let strArray = stdName.split('');// returns array ['a','l','i']
+    console.log(strArray);
+    let strArrayRev = strArray.reverse(); // array ['i','l','a']
+    console.log(strArrayRev);
+    let strArrayJoin = strArrayRev.join(''); // return string =>  ila
+    console.log(strArrayJoin);
+    if(stdName == strArrayJoin){
+        console.log('Word is Palindrome');
+    }
+    else{
+          console.log('Not Palindrome');
+    } 
+</script>
